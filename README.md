@@ -1,73 +1,111 @@
-# Welcome to your Lovable project
+# Marci Metzger Real Estate Website - Web Builder Assignment
 
-## Project info
+## 📋 Assignment Overview
 
-**URL**: https://lovable.dev/projects/2dba8ecb-dc7c-4f24-8ac3-bb0159def258
+This project is a submission for the **Web Builder Assignment**, which involved revamping the homepage of a real estate agent's website. The goal was to create a modern, elegant, and user-friendly single-page website that showcases the agent's services and properties.
 
-## How can I edit this code?
+### Assignment Requirements
+- ✅ Revamp the "Home" page only (single page website)
+- ✅ Use the original webpage as reference
+- ✅ Improve the design - not just copy and paste
+- ✅ Include all content from the original webpage
+- ✅ Download and use images directly from the original website
+- ✅ Create using HTML, CSS, and JavaScript (or modern frameworks)
+- ✅ Deploy to a free web hosting site
 
-There are several ways of editing your application.
+## 🎯 Project Goals Achieved
 
-**Use Lovable**
+This redesigned website successfully:
+- **Modernized the UI/UX** with a clean, contemporary design
+- **Enhanced user experience** with smooth animations and intuitive navigation
+- **Implemented fully responsive design** - works seamlessly on desktop, tablet, and mobile devices
+- **Optimized performance** using modern web technologies
+- **Maintained brand identity** while elevating the visual appeal
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2dba8ecb-dc7c-4f24-8ac3-bb0159def258) and start prompting.
+## 🚀 Technologies Used
 
-Changes made via Lovable will be committed automatically to this repo.
+This project leverages modern web development tools and frameworks:
 
-**Use your preferred IDE**
+- **Vite** - Lightning-fast build tool and development server
+- **React** - Component-based UI library
+- **TypeScript** - Type-safe JavaScript for better code quality
+- **Tailwind CSS** - Utility-first CSS framework for rapid styling
+- **shadcn/ui** - High-quality, accessible UI components
+- **Vercel** - Deployment and hosting platform
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 📱 Key Features
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Responsive Design
+The website is **fully mobile-responsive**, ensuring an optimal viewing experience across all devices:
+- Desktop (1920px+)
+- Laptop (1024px - 1919px)
+- Tablet (768px - 1023px)
+- Mobile (320px - 767px)
 
-Follow these steps:
+### Sections Included
+1. **Hero Section** - Eye-catching introduction with call-to-action
+2. **Agent Profile** - Professional bio and credentials
+3. **Services** - Comprehensive list of real estate services offered
+4. **Property Search** - Interactive property search functionality
+5. **Neighborhoods** - Showcase of local areas and communities
+6. **Get It Sold** - Home selling services and information
+7. **Contact** - Multiple ways to get in touch
+8. **Footer** - Additional navigation and information
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Design Enhancements
+- Modern, clean aesthetic with professional color scheme
+- Smooth scroll animations and reveal effects
+- High-quality imagery and optimized assets
+- Accessible and user-friendly interface
+- Fast loading times and optimized performance
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 💻 Local Development
 
-# Step 3: Install the necessary dependencies.
-npm i
+To run this project locally:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+# Clone the repository
+git clone https://github.com/ohitswardy/Marci-Metzger.git
+
+# Navigate to project directory
+cd Marci-Metzger
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🌐 Deployment
 
-**Use GitHub Codespaces**
+This project is deployed on **Vercel** for easy access and review:
+- Live URL: [Insert your Vercel deployment URL here]
+- GitHub Repository: https://github.com/ohitswardy/Marci-Metzger
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📝 Development Notes
 
-## What technologies are used for this project?
+### Timeline
+While the assignment specified a 3-day completion window, I took additional time to ensure the website was **fully mobile-responsive**. I believe that in today's mobile-first world, responsive design is not optional—it's essential. The extra time invested resulted in a polished, professional product that works flawlessly across all devices.
 
-This project is built with:
+### Design Philosophy
+- **User-Centric**: Every design decision was made with the end user in mind
+- **Performance-Focused**: Optimized assets and code for fast loading
+- **Accessible**: Followed WCAG guidelines for accessibility
+- **Scalable**: Component-based architecture for easy future updates
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Challenges & Solutions
+- **Challenge**: Making complex layouts responsive across all devices
+  - **Solution**: Used Tailwind's responsive utilities and tested extensively on various screen sizes
+  
+- **Challenge**: Maintaining design consistency while improving aesthetics
+  - **Solution**: Created a cohesive design system with reusable components
 
-## How can I deploy this project?
+- **Challenge**: Optimizing images from the original website
+  - **Solution**: Downloaded, optimized, and properly sized all images for web performance
 
-Simply open [Lovable](https://lovable.dev/projects/2dba8ecb-dc7c-4f24-8ac3-bb0159def258) and click on Share -> Publish.
+## 📧 Contact
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+For any questions regarding this submission, please feel free to reach out.
