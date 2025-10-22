@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80">
+  <style>
+    .logo-text { 
+      font-family: Georgia, 'Times New Roman', serif; 
+      font-size: 18px; 
+      font-weight: 400; 
+      letter-spacing: 8px; 
+      fill: #2c3e50;
+    }
+    .logo-homes { 
+      font-family: 'Brush Script MT', 'Lucida Handwriting', cursive; 
+      font-size: 28px; 
+      font-style: italic; 
+      fill: #2c3e50;
+      font-weight: 400;
+    }
+    .logo-line { 
+      stroke: #2c3e50; 
+      stroke-width: 1.5; 
+      fill: none; 
+    }
+  </style>
+  
+  <!-- MARCI METZGER text with letter spacing -->
+  <text x="15" y="25" class="logo-text">MARCI METZGER</text>
+  
+  <!-- Horizontal line underneath -->
+  <line x1="15" y1="35" x2="285" y2="35" class="logo-line"/>
+  
+  <!-- Homes in script style, centered below -->
+  <text x="110" y="65" class="logo-homes">Homes</text>
+</svg>
