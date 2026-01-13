@@ -8,6 +8,7 @@ import Neighborhoods from "@/components/Neighborhoods";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import FloatingChatButton from "@/components/FloatingChatButton";
 
 const Index = () => {
   return (
@@ -37,6 +38,7 @@ const Index = () => {
       <ScrollReveal direction="fade" delay={0.2}>
         <Footer />
       </ScrollReveal>
+      <FloatingChatButton />
     </div>
   );
 };
