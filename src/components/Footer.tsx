@@ -16,7 +16,7 @@ const Footer = () => {
               >
                 <p className="font-serif text-2xl font-bold mb-2">MARCI METZGER</p>
                 <p className="text-sm text-primary-foreground/80">
-                  © 2025 Marci Metzger Homes. All rights reserved.
+                  © 2026 Marci Metzger Homes. All rights reserved.
                 </p>
               </motion.div>
 

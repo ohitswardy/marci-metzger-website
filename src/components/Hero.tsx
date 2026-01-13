@@ -4,21 +4,6 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
-  const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#services", label: "Services" },
-    { href: "#neighborhoods", label: "Community Photos" },
-    { href: "#contact", label: "Contact" },
-  ];
-
-  const handleNavClick = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       <motion.div 
@@ -30,35 +15,8 @@ const Hero = () => {
       >
         <div className="absolute inset-0 bg-primary/60" />
       </motion.div>
-
-      {/* Navigation Buttons Below Header */}
-      <motion.nav
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="absolute top-[140px] left-0 right-0 z-20"
-      >
-        <div className="flex flex-wrap justify-center items-center gap-6 px-4 max-w-4xl mx-auto">
-          {navLinks.map((link, index) => (
-            <motion.a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick(link.href);
-              }}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 + (index * 0.1) }}
-              className="text-white font-serif font-bold text-base tracking-wide hover:text-accent transition-colors duration-300 cursor-pointer"
-            >
-              {link.label}
-            </motion.a>
-          ))}
-        </div>
-      </motion.nav>
       
-      <div className="relative z-10 text-center text-primary-foreground px-4">
+      <div className="relative z-10 text-center text-primary-foreground px-4 mt-16 md:mt-0">
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
