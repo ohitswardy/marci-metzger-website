@@ -4,9 +4,8 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
-  const [isVisible, setIsVisible] = useState(true);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showNavigation, setShowNavigation] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
     { href: "#home", label: "Home" },
@@ -28,29 +27,20 @@ const Header = () => {
     const handleScroll = () => {
       const currentScrollY = window.pageYOffset || window.scrollY;
       
-      // Hide header at the very top (hero section), show only when scrolling
+      // Show navigation after scrolling past hero
       if (currentScrollY > 100) {
-        setIsVisible(true);
         setShowNavigation(true);
       } else {
-        setIsVisible(false);
         setShowNavigation(false);
-        setIsMobileMenuOpen(false); // Close mobile menu when back at top
+        setIsMobileMenuOpen(false);
       }
     };
 
-    // Initial check on mount
     handleScroll();
-
-    // Add scroll listener
     window.addEventListener("scroll", handleScroll, { passive: true });
-    
-    // Also check on resize to handle orientation changes
-    window.addEventListener("resize", handleScroll, { passive: true });
     
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
     };
   }, []);
 
@@ -66,14 +56,17 @@ const Header = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, [isMobileMenuOpen]);
 
+  if (!showNavigation) return null;
+
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b shadow-sm transition-transform duration-300 ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      }`}
+    <motion.header 
+      initial={false}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2 }}
+      className="fixed top-0 left-0 right-0 z-[9999] bg-white border-b shadow-md"
     >
-      <div className="container mx-auto px-4 py-4 md:py-6">
-        <div className="flex items-center justify-between">
+      <div className="w-full px-4 py-3 md:py-4">
+            <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
           <a href="#home" className="flex items-center hover:opacity-80 transition-opacity" onClick={(e) => {
             e.preventDefault();
@@ -82,18 +75,13 @@ const Header = () => {
             <img 
               src={logo}
               alt="Marci Metzger Homes" 
-              className="h-12 md:h-16 lg:h-20 w-auto"
+              className="h-10 md:h-14 lg:h-16 w-auto object-contain"
             />
           </a>
 
           {/* Desktop Navigation - Inline with header */}
           {showNavigation && (
-            <motion.nav
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3 }}
-              className="hidden md:flex items-center gap-6"
-            >
+            <nav className="hidden md:flex items-center gap-6">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -107,57 +95,45 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-            </motion.nav>
+            </nav>
           )}
 
-          {/* Hamburger Menu Button - Mobile Only - Shows after scrolling */}
+          {/* Hamburger Menu Button - Mobile Only */}
           {showNavigation && (
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3 }}
+            <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 text-primary hover:text-accent transition-colors"
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-            </motion.button>
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           )}
         </div>
 
         {/* Mobile Menu Dropdown */}
         <AnimatePresence>
           {isMobileMenuOpen && showNavigation && (
-            <motion.nav
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden"
-            >
-              <div className="pt-4 pb-2 flex flex-col space-y-3">
-                {navLinks.map((link, index) => (
-                  <motion.a
+            <div className="md:hidden overflow-hidden border-t mt-3 pt-3">
+              <div className="flex flex-col space-y-3 pb-2">
+                {navLinks.map((link) => (
+                  <a
                     key={link.href}
                     href={link.href}
                     onClick={(e) => {
                       e.preventDefault();
                       handleNavClick(link.href);
                     }}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
                     className="text-primary font-serif font-bold text-lg tracking-wide hover:text-accent transition-colors duration-300 cursor-pointer py-2 border-b border-gray-200 last:border-0"
                   >
                     {link.label}
-                  </motion.a>
+                  </a>
                 ))}
               </div>
-            </motion.nav>
+            </div>
           )}
         </AnimatePresence>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
