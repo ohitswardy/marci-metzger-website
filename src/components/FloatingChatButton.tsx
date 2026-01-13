@@ -19,7 +19,11 @@ const FloatingChatButton = () => {
         animate={{ scale: isMounted ? 1 : 0 }}
         transition={{ duration: 0.3, delay: isMounted ? 0.5 : 0 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-primary hover:bg-primary/90 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+        style={{ 
+          bottom: 'max(1.5rem, env(safe-area-inset-bottom, 1.5rem))',
+          right: 'max(1.5rem, env(safe-area-inset-right, 1.5rem))'
+        }}
+        className="fixed z-50 w-14 h-14 bg-primary hover:bg-primary/90 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
         aria-label="Open chat menu"
       >
         {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
@@ -33,7 +37,11 @@ const FloatingChatButton = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-24 right-6 z-50 bg-white rounded-lg shadow-2xl p-6 w-80 border"
+            style={{ 
+              bottom: 'max(6rem, calc(env(safe-area-inset-bottom, 1.5rem) + 4.5rem))',
+              right: 'max(1.5rem, env(safe-area-inset-right, 1.5rem))'
+            }}
+            className="fixed z-50 bg-white rounded-lg shadow-2xl p-6 w-80 border max-h-[80vh] overflow-y-auto"
           >
             <div className="space-y-4">
               <div className="text-center pb-4 border-b">
