@@ -68,10 +68,7 @@ const Header = () => {
 
   return (
     <header 
-      style={{
-        top: 'max(0px, env(safe-area-inset-top, 0px))'
-      }}
-      className={`fixed left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b shadow-sm transition-transform duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b shadow-sm transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
