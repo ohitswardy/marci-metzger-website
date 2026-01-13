@@ -25,10 +25,8 @@ const Header = () => {
   };
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
-
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+      const currentScrollY = window.pageYOffset || window.scrollY;
       
       // Hide header at the very top (hero section), show only when scrolling
       if (currentScrollY > 100) {
@@ -39,15 +37,21 @@ const Header = () => {
         setShowNavigation(false);
         setIsMobileMenuOpen(false); // Close mobile menu when back at top
       }
-      
-      lastScrollY = currentScrollY;
     };
 
-    // Initial check
+    // Initial check on mount
     handleScroll();
 
+    // Add scroll listener
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    // Also check on resize to handle orientation changes
+    window.addEventListener("resize", handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   // Close mobile menu when resizing to desktop
